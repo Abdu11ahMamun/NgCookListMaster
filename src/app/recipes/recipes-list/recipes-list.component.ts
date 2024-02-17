@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Resipe } from '../recipe.model';
+import { Recipe } from '../recipe.model';
 
 @Component({
   selector: 'app-recipes-list',
@@ -8,8 +8,8 @@ import { Resipe } from '../recipe.model';
 })
 export class RecipesListComponent {
 
-  recipes: Resipe[] =[
-    new Resipe('Test Name', 'Test Description', 'https://fodguru.com/wp-content/uploads/2023/09/Untitled-design.png')
+  recipes: Recipe[] =[
+    new Recipe('Test Name', 'Test Description', 'https://fodguru.com/wp-content/uploads/2023/09/Untitled-design.png')
   ];
 
   constructor(){}
