@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter,Output } from '@angular/core';
 import { Recipe } from '../recipe.model';
 
 @Component({
@@ -7,11 +7,14 @@ import { Recipe } from '../recipe.model';
   styleUrl: './recipes-list.component.css'
 })
 export class RecipesListComponent {
-
+  @Output() recipeWasSelected= new EventEmitter<Recipe>();
   recipes: Recipe[] =[
     new Recipe('Test Name', 'Test Description', 'https://fodguru.com/wp-content/uploads/2023/09/Untitled-design.png')
   ];
 
   constructor(){}
+  onRecipeSelected(recipe: Recipe) {
+    this.recipeWasSelected.emit(recipe);
+  }
 
 }
